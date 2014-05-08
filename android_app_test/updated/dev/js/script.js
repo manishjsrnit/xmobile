@@ -126,7 +126,11 @@ function modifications() {
     $(".selectpicker").selectpicker("refresh");
 }
 
+	alert('hello');
+
 $('.container-wrapper-start-up').on('click', function(){
   $(this).addClass('hide-this');
   $('.container-wrapper-search-app').addClass('show-this');
+  
+  
 })
