@@ -653,3 +653,158 @@ font-size: 16px;
     top: 2px;
     right: 3px;
 }
+
+.activityVar i {
+font-size: 55px;
+position: relative;
+top: 0px;
+}
+
+.m320 .settings{
+	position: relative;
+top: -17px;
+}
+
+.m320 .defaultGradeText,
+.m320 .ruleSet .defaultLabelText{
+	display:none;
+}
+
+.m320 .gradesRow .col-sm-4{
+	margin:0px;
+	padding:0px;
+}
+
+.m320 .tabs{
+	left:15px;
+}
+
+.m320 .td-container {
+    margin-top: 90px;
+}
+.m320 .row.gradesRow > .col-sm-4 {
+    float: left;
+}
+.m320 .primaryGrade {
+    width: auto;
+    display: inline-block;
+}
+.m320 .tabs a {
+    min-width: 70px;
+}
+
+.m320 #home {
+    overflow: hidden;
+}
+.m320 .activity-variables .col-sm-3 {
+    width: 90%;;
+    margin: 20px 0px 0px 0px;
+    padding: 0px;
+}
+
+.m768.mobile-menu.settings{
+	position:relative;
+	top: -17px;
+	right: -15px;
+}
+.m768.mobile-menu.defaultGradeText,
+.m768.mobile-menu.ruleSet .defaultLabelText{
+	display:none;
+}
+.m768.mobile-menu .gradesRow .col-sm-4{
+	margin:0px;
+	padding:0px;
+}
+.m768.mobile-menu .tabs{
+	left:15px;
+}
+.m768.mobile-menu .td-container {
+    margin-top: 80px;
+}
+.m768.mobile-menu .row.gradesRow > .col-sm-4 {
+    float: left;
+}
+.m768.mobile-menu .primaryGrade {
+    width: auto;
+    display: inline-block;
+}
+.m768.mobile-menu .tabs a {
+    min-width: 70px;
+}
+
+.m768.mobile-menu .ruleSet .defaultLabelText {
+    display: none;
+}
+.m768.mobile-menu #home {
+    overflow: hidden;
+}
+.m768.mobile-menu .activity-variables .col-sm-3 {
+    width: 100%;;
+    margin: 20px 0px 0px -20px;
+    padding: 0px;
+}
+
+.m768.mobile-menu  .profileURL {
+    position: absolute;
+    top: -50px;
+}
+.m768.mobile-menu .profileURL {
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    right: auto;
+}
+.m768.mobile-menu .header .col-sm-5 {
+    display: block;
+    position: relative;
+    float: none;
+    right: auto;
+    left: 0px;
+}
+.settings {}
+.m768.mobile-menu .settings {
+    position: relative;
+    left: 4px;
+    float: none;
+}
+.m768.mobile-menu .ruleSet {
+    float: right;
+    right: 17px;
+}
+
+.mobile-menu.m320 .leftTabs {
+    max-width: 210px;
+    /* float: left; */
+}
+.mobile-menu.m320 .col-sm-9.leftTabContent {
+float: right;
+margin-left: 203px;
+margin-top: -84px;
+z-index: 3;
+}
+
+.m320.mobile-menu .leftTabContainerWrapper h2 {
+    padding: inherit;
+}
+.m320.mobile-menu .gradesTab .leftTabContainerWrapper h2 {
+padding: 10px 0px 10px 0px;
+font-size: 19px;
+text-align: center;
+}
+.m320.mobile-menu  .activity-variables {
+    padding-left: 0px;
+}
+.m320.mobile-menu  .activity-variables {
+    padding-left: 0px;
+}
+.m320.mobile-menu .activity-variables {
+    padding-left: 10px;
+}
+.m320.mobile-menu .gradesTab .activityVar {
+    font-size: 40px;
+    min-height: 50px;
+}
+.m320.mobile-menu .varInfo {
+    padding: 10px;
+    margin: 10px;
+}
