@@ -1,6 +1,7 @@
 <!-- DOCTYPE html !-->
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./css/bootstrap-select.css">
     <link rel="stylesheet" type="text/css" href="./bootstrap/bootstrap3-editable/bootstrap3-editable/css/bootstrap-editable.css">
@@ -20,7 +21,7 @@
 	<div class="tabs">
 		<ul>
 			 <li class="active"><a href="#home" data-toggle="tab">Grades</a></li>
-  <li><a href="#gradePerRule" data-toggle="tab">Grades Per Rule</a></li>
+  <li><a href="#gradePerRule" data-toggle="tab"><span class="defaultGradeText">Grades </span>Per Rule</a></li>
   <li><a href="#activities" data-toggle="tab">All Activities</a></li>
 		</ul>
 	</div>
@@ -45,8 +46,8 @@
 	</div>
 </header>
 <div class="mainContent">
-	<div class="tab-content">
-  <div class="tab-pane fade in active" id="home">
+	<div class="tab-content ">
+  <div class="gradesTab tab-pane fade in active " id="home">
   	<div class="contentHeader">
   		<div class="row gradesRow">
   			<div class="col-sm-4">
@@ -372,6 +373,7 @@ Performance</div>
 <script type="text/javascript" src="./js/backbone-min.js"></script>
 <script type="text/javascript" src="./js/bootstrap-select.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>
+
 <script type="text/javascript" src="./js/htmlpreview.min.js"></script>
 	<script>HTMLPreview.init();</script>
 
