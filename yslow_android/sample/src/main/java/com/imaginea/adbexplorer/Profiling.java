@@ -130,7 +130,7 @@ public class Profiling {
         System.out
                 .format("-------------------------------------------------------%n");
         System.out
-                .printf("To get the Fragment Data, the App needs to be “instrumented” first.%n");
+                .printf("To get the Fragment Data, the App needs to be instrumented first.%n");
 
         sIn = new Scanner(System.in);
         System.out.println("Do you want to Instrument the App (Y or N)");
