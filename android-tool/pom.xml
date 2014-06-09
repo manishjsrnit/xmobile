@@ -23,6 +23,16 @@
 			<artifactId>jna</artifactId>
 			<version>3.0.9</version>
 		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<version>${project.version}</version>
+			<artifactId>android-tool-tess4j.jar</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<version>${project.version}</version>
+			<artifactId>android-tool-jai_imageio.jar</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
