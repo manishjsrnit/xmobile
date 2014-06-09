@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>com.imaginea.mobile.tool</groupId>
+		<artifactId>xmobile</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>web</artifactId>
+	<packaging>war</packaging>
+	<dependencies>
+        <dependency>
+            <groupId>com.imaginea.mobile.tool</groupId>
+            <artifactId>android-tool</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+         </dependency>
+	</dependencies>
+	
+	<build>
+		<finalName>xmobileweb</finalName>
+		<plugins>
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-war-plugin</artifactId>
+		        <version>2.4</version>
+		        <configuration>
+		        	<webappDirectory>${basedir}/src/main/webapp</webappDirectory>
+		        </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.1.0.v20131115</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>
