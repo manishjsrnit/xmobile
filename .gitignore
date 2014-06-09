@@ -1,8 +1,6 @@
 /bin
-/target
-/yslow_android/library/.settings
-/yslow_android/sample/.settings
-/yslow_android/.settings
-/yslow_android/target
-/yslow_android/sample/src/main/webapp/WEB-INF/lib
-/yslow_android/sample/src/main/webapp/WEB-INF/classes
+target
+/android-tool/libs/.settings
+.settings
+web/src/main/webapp/WEB-INF/lib
+classes
