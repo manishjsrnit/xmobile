@@ -584,11 +584,12 @@ label{
     padding: 5px;
     background: #fff;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+	min-height:55px;
 }
-.activeted-lable-value {
+.activated-lable-value {
     color: #A0A0A0;
 }
-.activeted-text {
+.activated-text {
     font-weight: bold;
 }
 
@@ -885,4 +886,47 @@ border-radius: 2px;
 border: 1px solid #D3D0D0;
 margin-left: -30%;
 margin-top: 10px;
+}
+
+.activated-col+.activated-col:after {
+content: "|";
+position: absolute;
+left: 3px;
+top: 9px;
+color: #BDBCBC;
+}
+.activated-col {
+float: left;
+padding-top: 10px;
+padding-left: 25px;
+position:relative;
+}
+.activated-col+.activated-col {
+    padding-left: 18px;
+    margin-left: 10px;
+}
+
+.activated-col .search-bar-wrapper {
+    width: 250px;
+    top: 0px;
+    left: auto;
+    margin-top: -3px;
+    position: relative;
+    display: inline-block;
+    margin-left: 0px;
+    height: 25px;
+}
+.activated-col .search-bar-wrapper input.search-input-big {
+    height: 17px;
+    font-size: 15px;
+    line-height: 12px;
+}
+.activated-col .search-bar-wrapper .search-start-button i {
+    top: -9px;
+    font-size: 22px;
+}
+.activated-col .search-bar-wrapper .search-start-button i {}
+.activated-col .search-bar-wrapper button.search-start-button {
+    width: 30px;
+    height: 30px;
 }

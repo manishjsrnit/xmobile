@@ -111,6 +111,13 @@ model = new Backbone.Model({
 // Applying Styles on the ruleset selection  
 $(".selectpicker").selectpicker();
 
+$('.search-start-button').on('click', function(){
+	$(this).addClass('dNone');
+		$(this).addClass('dNone');
+		$('#container').removeClass('dNone');
+		$('.app-name').removeClass('dNone');
+})
+
 function modifications() {
     // Create subtext
     $(".selectpicker > option:eq(0)").attr("data-subtext", "ySlow");
