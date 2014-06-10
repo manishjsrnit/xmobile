@@ -111,7 +111,7 @@ model = new Backbone.Model({
 // Applying Styles on the ruleset selection  
 $(".selectpicker").selectpicker();
 
-$('.search-start-button').on('click', function(){
+$('.global-search .search-start-button').on('click', function(){
 	$(this).addClass('dNone');
 		$(this).addClass('dNone');
 		$('#container').removeClass('dNone');
