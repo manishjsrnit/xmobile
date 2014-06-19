@@ -21,7 +21,7 @@ public class Utils {
 
     /** The Constant INSTRUMENTATION_LIB_PATH. */
     public final static String INSTRUMENTATION_LIB_PATH = File.separator
-            + "library" + File.separator + "libs" + File.separator
+            + "android-tool" + File.separator + "libs" + File.separator
             + "InstrumentationPackage";
 
     /** The device density. */

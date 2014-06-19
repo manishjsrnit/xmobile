@@ -140,7 +140,7 @@ public class Aspect {
         generateAjc();
         // check for fragemnts
         final String importPackage = CheckFragemntJar(apk, new JarFile(
-                "profiling_dex2jar.jar"));
+        		PackageName + "-1-dex2jar.jar"));
         if (importPackage.isEmpty()) {
             return false;
         }

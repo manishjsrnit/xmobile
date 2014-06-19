@@ -33,6 +33,11 @@
 			<version>${project.version}</version>
 			<artifactId>android-tool-jai_imageio.jar</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.android.tools.ddms</groupId>
+			<artifactId>ddmlib</artifactId>
+			<version>22.9.1</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -59,7 +64,8 @@
 								<resource>
 									<directory>${basedir}/libs</directory>
 									<includes>
-										<include>**/*.jar</include>
+										<include>jai_imageio.jar</include>
+										<include>tess4j.jar</include>
 									</includes>
 								</resource>
 							</resources>

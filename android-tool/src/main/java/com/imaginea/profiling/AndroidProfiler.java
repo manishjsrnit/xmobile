@@ -61,7 +61,7 @@ public final class AndroidProfiler {
      * @param sdkHomePath
      *            the new android sdk path befor start profiling
      */
-    private void setAndroidSdkPathBeforStartProfiling(final String sdkHomePath) {
+    public void setAndroidSdkPathBeforStartProfiling(final String sdkHomePath) {
         System.setProperty("ANDROID_SDK_HOME", sdkHomePath);
         mSDKPath = sdkHomePath;
         mADBPath = sdkHomePath + "/platform-tools/adb";

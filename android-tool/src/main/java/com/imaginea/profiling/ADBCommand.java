@@ -128,7 +128,7 @@ public class ADBCommand {
             // this will setup the tesseract path
             Utils.SetupTesseract(passWord);
         } else {
-            System.exit(0);
+            //System.exit(0);
         }
 
     }

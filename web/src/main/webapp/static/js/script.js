@@ -133,8 +133,26 @@ function modifications() {
 }
 
 
+$('.container-android-path').on('click', function(){
+	$.ajax({
+		url : "/profile/androidpath/sss",
+		success : function() {
+			//$("div").html(result);
+			$(this).addClass('hide-this');
+			$('.container-wrapper-start-up').addClass('show-this');
+		}
+	});
+});
+
+
 $('.container-wrapper-start-up').on('click', function(){
+	$.ajax({
+		url : "/profile/",
+		success : function(result) {
+			$("div").html(result);
+		}
+	});
   $(this).addClass('hide-this');
   $('.container-wrapper-search-app').addClass('show-this');
-})
+});
 
