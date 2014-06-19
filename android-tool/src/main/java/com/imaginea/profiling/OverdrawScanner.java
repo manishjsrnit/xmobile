@@ -18,11 +18,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.imageio.ImageIO;
 
 import net.sourceforge.tess4j.Tesseract;
-import net.sourceforge.tess4j.TesseractException;
 
 import com.imaginea.instrumentation.Utils;
 import com.imaginea.instrumentation.Utils.DeviceDensity;
@@ -44,6 +45,8 @@ public final class OverdrawScanner {
 
     private static int OVERDRAW_BOTTOM_LEFT_CORNER_HEIGHT = 0;
 
+    private static Set<String> REPORTED_THROWABLES = new HashSet<String>();
+    
     /**
      * Color to RGB. This method is used for Image Processing and gets the RGB
      * value of each Image Pixel
@@ -222,7 +225,13 @@ public final class OverdrawScanner {
             }
             result = tesseract.doOCR(file);
             file.delete();// delete the file once OCR done
-        } catch (final TesseractException e) {
+        } catch (final Throwable t) {
+        	// we see a lot of NoClassDefFoundError in case tesseract is not set up properly
+        	// so catching Throwable instead of Exception
+        	if (REPORTED_THROWABLES.contains(t.getClass().getName()) == false) {
+        		t.printStackTrace();
+        		REPORTED_THROWABLES.add(t.getClass().getName());
+        	}
         }
 
         return result;

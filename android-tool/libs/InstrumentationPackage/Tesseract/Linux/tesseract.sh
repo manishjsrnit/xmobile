@@ -16,7 +16,7 @@ if [ ! -L /usr/local/lib/libtesseract.a ]; then
       # copying eng.traineddata to required path
 	if [ ! -f /usr/local/share/tessdata/eng.traineddata ];then
    		mkdir -p /usr/local/share/tessdata/
-   		cp `pwd`/InstrumentationPackage/tessdata/eng.traineddata /usr/local/share/tessdata/
+   		cp `pwd`/InstrumentationPackage/Tesseract/tessdata/eng.traineddata /usr/local/share/tessdata/
 	fi
 fi   
 
