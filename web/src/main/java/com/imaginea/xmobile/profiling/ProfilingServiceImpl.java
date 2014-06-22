@@ -5,8 +5,8 @@ import java.util.Map;
 import org.springframework.stereotype.Component;
 
 import com.android.ddmlib.AndroidDebugBridge;
-import com.imaginea.profiling.AndroidProfiler;
 import com.imaginea.profiling.ADBCommand.ProfilingData;
+import com.imaginea.profiling.AndroidProfiler;
 
 @Component
 public class ProfilingServiceImpl implements ProfilingService {
@@ -17,8 +17,10 @@ public class ProfilingServiceImpl implements ProfilingService {
 	}
 	
 	@Override
-	public String showAllPackages() {
-		return androidProfiler.showAllPackages();
+	public String[] showAllPackages() {
+		String packages = androidProfiler.showAllPackages();
+		String[] packagesArr = packages.split("\\r?\\n\\r?\\n");
+		return packagesArr;
 	}
 
 	@Override

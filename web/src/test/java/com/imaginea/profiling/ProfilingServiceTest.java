@@ -32,9 +32,8 @@ public class ProfilingServiceTest {
 
 	//@Test
 	public void showAllPackages() {
-		String packages = profilingService.showAllPackages();
-		Assert.assertFalse(packages.isEmpty());
-		System.out.println(packages);
+		String[] packages = profilingService.showAllPackages();
+		Assert.assertFalse(packages.length == 0);
 	}
 
 	//@Test

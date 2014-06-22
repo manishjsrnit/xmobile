@@ -29,8 +29,8 @@ public class ProfilingController {
 		profilingService.markAndroidPath(androidSdkPath);
 	}
 
-	@RequestMapping(method=RequestMethod.GET, value="/packages", params="!packageName")
-	public @ResponseBody String showAllPackages() {
+	@RequestMapping(method=RequestMethod.GET, value="/packages", params="!packageName", produces=MediaType.APPLICATION_JSON_VALUE)
+	public @ResponseBody String[] showAllPackages() {
 		return profilingService.showAllPackages();
 	}
 

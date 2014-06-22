@@ -116,7 +116,7 @@ $('.global-search .search-start-button').on('click', function(){
 		$(this).addClass('dNone');
 		$('#container').removeClass('dNone');
 		$('.app-name').removeClass('dNone');
-})
+});
 
 function modifications() {
     // Create subtext
@@ -132,27 +132,31 @@ function modifications() {
     $(".selectpicker").selectpicker("refresh");
 }
 
-
-$('.container-android-path').on('click', function(){
-	$.ajax({
-		url : "/profile/androidpath/sss",
-		success : function() {
-			//$("div").html(result);
-			$(this).addClass('hide-this');
-			$('.container-wrapper-start-up').addClass('show-this');
-		}
-	});
-});
-
-
 $('.container-wrapper-start-up').on('click', function(){
+	var obj = this;
 	$.ajax({
-		url : "/profile/",
+		url : "/profile/connected",
 		success : function(result) {
-			$("div").html(result);
+			if(result === "true") {
+				getPackages(obj);
+			}
 		}
 	});
-  $(this).addClass('hide-this');
-  $('.container-wrapper-search-app').addClass('show-this');
 });
 
+function getPackages(obj) {
+	$.ajax({
+		url : "/profile/packages",
+		success : function(result) {
+			if(result) {
+				$(obj).addClass('hide-this');
+				$('.container-packages').addClass('show-this');
+				var concatHtml = "";
+				for(var i = 0; i < result.length; i++) {
+					concatHtml += "<p>" + result[i] + "</p>"; 
+				}
+				$('.package-list')[0].innerHTML = concatHtml;
+			}
+		}
+	});
+}
