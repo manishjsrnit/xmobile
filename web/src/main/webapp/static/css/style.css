@@ -628,6 +628,18 @@ padding-left: 10px;
 background: none;
 }
 
+.stop-button {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 52px;
+    border: 0px;
+    height: 45px;
+
+
+background: none;
+}
+
 .search-input-big::-webkit-input-placeholder {font-size: 14px; line-height: 30px; }
 .search-input-big::-moz-placeholder {font-size: 14px; }
 .search-input-big::-ms-input-placeholder {font-size: 14px;}

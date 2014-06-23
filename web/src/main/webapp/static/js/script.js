@@ -144,6 +144,28 @@ $('.container-wrapper-start-up').on('click', function(){
 	});
 });
 
+$('.search-start-button').on('click', function(){
+  var appName = $(".search-input-big")[0].value;
+  var obj = this;
+  $.ajax({
+	type: "POST",
+    url : "/profile/packages?packageName=" + appName,
+    success : function() {
+    	$(obj).addClass('hide-this');
+		$('.container-stop-profile').addClass('show-this');
+    }
+  });
+});
+
+$('.stop-button').on('click', function(){
+	$.ajax({
+	    url : "/profile/stop",
+	    success : function(data) {
+	    	$('.container-stop-profile').html(data);
+	    }
+	});
+});
+
 function getPackages(obj) {
 	$.ajax({
 		url : "/profile/packages",
