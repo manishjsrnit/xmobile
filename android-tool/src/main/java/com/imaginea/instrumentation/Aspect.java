@@ -129,18 +129,21 @@ public class Aspect {
      *            the @param path String1
      * @param PackageName
      *            the package name
+     * @param apkName 
      * @return true, if successful
      * @throws IOException
      *             Signals that an I/O exception has occurred.
      */
     public static boolean injectCode2jar(final String apk, final String path,
-            final String PackageName) throws IOException {
+            final String PackageName, String apkName) throws IOException {
         String[] cmd = null;
         // generate a script to run commad line ajc
         generateAjc();
         // check for fragemnts
-        final String importPackage = CheckFragemntJar(apk, new JarFile(
-        		PackageName + "-1-dex2jar.jar"));
+        JarFile jarFile = new JarFile(
+        		apkName.substring(0, apkName.indexOf(".apk")) + "-dex2jar.jar");
+        
+		final String importPackage = CheckFragemntJar(apk, jarFile);
         if (importPackage.isEmpty()) {
             return false;
         }

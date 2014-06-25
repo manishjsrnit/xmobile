@@ -134,17 +134,21 @@ function modifications() {
 
 $('.container-wrapper-start-up').on('click', function(){
 	var obj = this;
+	$("#LoadingImage").show();
 	$.ajax({
 		url : "/profile/connected",
 		success : function(result) {
 			if(result === "true") {
 				getPackages(obj);
+			} else {
+				$("#LoadingImage").hide();
 			}
 		}
 	});
 });
 
 $('.search-start-button').on('click', function(){
+  $("#LoadingImage").show();	
   var appName = $(".search-input-big")[0].value;
   var obj = this;
   $.ajax({
@@ -153,15 +157,18 @@ $('.search-start-button').on('click', function(){
     success : function() {
     	$(obj).addClass('hide-this');
 		$('.container-stop-profile').addClass('show-this');
+		$("#LoadingImage").hide();
     }
   });
 });
 
 $('.stop-button').on('click', function(){
+	$("#LoadingImage").show();
 	$.ajax({
 	    url : "/profile/stop",
 	    success : function(data) {
 	    	$('.container-stop-profile').html(data);
+	    	$("#LoadingImage").hide();
 	    }
 	});
 });
@@ -178,6 +185,9 @@ function getPackages(obj) {
 					concatHtml += "<p>" + result[i] + "</p>"; 
 				}
 				$('.package-list')[0].innerHTML = concatHtml;
+				$("#LoadingImage").hide();
+			} else {
+				$("#LoadingImage").hide();
 			}
 		}
 	});

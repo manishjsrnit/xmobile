@@ -55,7 +55,7 @@ public class Instrumentation {
     public boolean injectCode2jar(final String inptuDir, final String apkName, final String outputDir, final String PackageName) {
         boolean ret = false;
         try {
-             ret = Aspect.injectCode2jar(inptuDir+ "/" + apkName, outputDir + "/classes.dex", PackageName);
+             ret = Aspect.injectCode2jar(inptuDir+ "/" + apkName, outputDir + "/classes.dex", PackageName, apkName);
         } catch (final IOException e) {
             e.printStackTrace();
         }
