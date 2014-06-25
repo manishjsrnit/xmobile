@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.imaginea.profiling.ADBCommand.ProfilingData;
+import com.imaginea.xmobile.profiling.ProfilingInfo;
 import com.imaginea.xmobile.profiling.ProfilingService;
 
 
@@ -41,12 +42,13 @@ public class ProfilingController {
 	}
 
 	@RequestMapping(method=RequestMethod.GET, value="/stop", produces=MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody Map<String, ProfilingData> stopProfiling() {
+	public @ResponseBody ProfilingInfo stopProfiling() {
 		return profilingService.stopProfiling();
 	}
 
 	@RequestMapping(method=RequestMethod.GET, value="/connected")
 	public @ResponseBody String connected() {
-		return Boolean.toString(profilingService.isDeviceConnected());
+		//return Boolean.toString(profilingService.isDeviceConnected());
+		return "true";
 	}
 }

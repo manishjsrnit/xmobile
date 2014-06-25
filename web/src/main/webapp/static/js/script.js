@@ -187,7 +187,10 @@ $('.stop-button').on('click', function(){
 	$.ajax({
 	    url : "/profile/stop",
 	    success : function(data) {
-	    	$('.container-stop-profile').html(data);
+	    	$('.container-stop-profile').removeClass('show-this');
+	    	$('.container-stop-profile').addClass('hide-this');
+	    	$('.container-profile-data').addClass('show-this');
+	    	$('.profile-data')[0].innerHTML = "<pre>" + JSON.stringify(data, undefined, 2); + "</pre>";
 	    	$("#LoadingImage").hide();
 	    }
 	});

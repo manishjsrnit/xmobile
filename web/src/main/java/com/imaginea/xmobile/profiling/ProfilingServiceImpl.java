@@ -29,9 +29,22 @@ public class ProfilingServiceImpl implements ProfilingService {
 	}
 
 	@Override
-	public Map<String, ProfilingData> stopProfiling() {
+	public ProfilingInfo stopProfiling() {
 		androidProfiler.stopProfiling();
-		return androidProfiler.getProfilingMap();
+		Map<String, ProfilingData> profilingMap = androidProfiler.getProfilingMap();
+		
+		ProfilingInfo profilingInfo = new ProfilingInfo();
+		profilingInfo.setAppLaunchedFirstTime(androidProfiler.isAppLaunchedFirstTime());
+		profilingInfo.setActivityGrades(androidProfiler.getActivityGrades());
+		profilingInfo.setActivityStackScore(androidProfiler.getActivityStackScore());
+		profilingInfo.setApplicationRating(androidProfiler.getApplicationRating());
+		profilingInfo.setApplicationScore(androidProfiler.getApplicationScore());
+		profilingInfo.setGcScore(androidProfiler.getGCScore());
+		profilingInfo.setLaunchTimeScore(androidProfiler.getLaunchTimeScore());
+		profilingInfo.setOverDrawScore(androidProfiler.getOverDrawScore());
+		profilingInfo.setProfilingMap(profilingMap);
+		
+		return profilingInfo;
 	}
 	
 	@Override

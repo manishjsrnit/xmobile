@@ -13,6 +13,7 @@ package com.imaginea.profiling;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
@@ -1126,9 +1127,11 @@ public class ADBCommand {
     /**
      * The Class ProfilingData.
      */
-    public class ProfilingData {
+    public class ProfilingData implements Serializable {
 
-        /** The m launch time. */
+		private static final long serialVersionUID = 1L;
+
+		/** The m launch time. */
         private final long mLaunchTime;
 
         /** The m gc calls. */

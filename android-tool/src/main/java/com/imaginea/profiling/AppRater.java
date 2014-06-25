@@ -281,6 +281,9 @@ public class AppRater {
      * @return the launch time score
      */
     public int getLaunchTimeScore() {
+    	if(activitiesGrade.size() == 0) {
+    		return 0;
+    	}
         final int launchTimeGrade = mGradeLaunchTime / activitiesGrade.size();
         return launchTimeGrade;
     }
@@ -291,6 +294,9 @@ public class AppRater {
      * @return the GC calls score
      */
     public int getGCCallsScore() {
+    	if(activitiesGrade.size() == 0) {
+    		return 0;
+    	}
         final int gcGrade = mGradeGC / activitiesGrade.size();
         return gcGrade;
     }
@@ -301,6 +307,9 @@ public class AppRater {
      * @return the activity stack score
      */
     public int getActivityStackScore() {
+    	if(activitiesGrade.size() == 0) {
+    		return 0;
+    	}
         final int activityStackGrade = mGradeActivityStack
                 / activitiesGrade.size();
         return activityStackGrade;
@@ -312,6 +321,9 @@ public class AppRater {
      * @return the over draw score
      */
     public int getOverDrawScore() {
+    	if(activitiesGrade.size() == 0) {
+    		return 0;
+    	}
         int overdrawGrade = mGradeOverDraw / activitiesGrade.size();
 
         if (overdrawGrade == -1) {
