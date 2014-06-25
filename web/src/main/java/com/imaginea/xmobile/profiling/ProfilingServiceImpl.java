@@ -25,7 +25,7 @@ public class ProfilingServiceImpl implements ProfilingService {
 
 	@Override
 	public int startProfiling(String packageName) {
-		return androidProfiler.startUIPerformanceProfiler(packageName, true);
+		return androidProfiler.startUIPerformanceProfiler(packageName, false);
 	}
 
 	@Override

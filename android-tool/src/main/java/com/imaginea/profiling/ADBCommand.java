@@ -453,7 +453,7 @@ public class ADBCommand {
         // filter the recent activity stack output
         for (final String v : retoutput.split("\n")) {
             if (v.contains(packageName)) {
-                if (v.contains("Recent #")) {
+                if (v.contains("Run #")) {
                     retout += v + "\n";
                 }
             }
