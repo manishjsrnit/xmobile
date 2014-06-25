@@ -133,13 +133,12 @@ function modifications() {
 }
 
 $('.container-wrapper-start-up').on('click', function(){
-	var obj = this;
 	$("#LoadingImage").show();
 	$.ajax({
 		url : "/profile/connected",
 		success : function(result) {
 			if(result === "true") {
-				getPackages(obj);
+				getPackages();
 			} else {
 				$("#LoadingImage").hide();
 			}
@@ -147,15 +146,36 @@ $('.container-wrapper-start-up').on('click', function(){
 	});
 });
 
+function getPackages() {
+	$.ajax({
+		url : "/profile/packages",
+		success : function(result) {
+			if(result) {
+				$('.container-wrapper-start-up').removeClass('show-this');
+				$('.container-wrapper-start-up').addClass('hide-this');
+				$('.container-packages').addClass('show-this');
+				var concatHtml = "";
+				for(var i = 0; i < result.length; i++) {
+					concatHtml += "<p>" + result[i] + "</p>"; 
+				}
+				$('.package-list')[0].innerHTML = concatHtml;
+				$("#LoadingImage").hide();
+			} else {
+				$("#LoadingImage").hide();
+			}
+		}
+	});
+}
+
 $('.search-start-button').on('click', function(){
   $("#LoadingImage").show();	
   var appName = $(".search-input-big")[0].value;
-  var obj = this;
   $.ajax({
 	type: "POST",
     url : "/profile/packages?packageName=" + appName,
     success : function() {
-    	$(obj).addClass('hide-this');
+    	$('.container-packages').removeClass('show-this');
+    	$('.container-packages').addClass('hide-this');
 		$('.container-stop-profile').addClass('show-this');
 		$("#LoadingImage").hide();
     }
@@ -173,22 +193,3 @@ $('.stop-button').on('click', function(){
 	});
 });
 
-function getPackages(obj) {
-	$.ajax({
-		url : "/profile/packages",
-		success : function(result) {
-			if(result) {
-				$(obj).addClass('hide-this');
-				$('.container-packages').addClass('show-this');
-				var concatHtml = "";
-				for(var i = 0; i < result.length; i++) {
-					concatHtml += "<p>" + result[i] + "</p>"; 
-				}
-				$('.package-list')[0].innerHTML = concatHtml;
-				$("#LoadingImage").hide();
-			} else {
-				$("#LoadingImage").hide();
-			}
-		}
-	});
-}
