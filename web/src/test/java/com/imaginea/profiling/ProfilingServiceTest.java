@@ -40,7 +40,7 @@ public class ProfilingServiceTest {
 	public void profile() throws InterruptedException {
 		profilingService.startProfiling("com.whatsapp");
 		Thread.sleep(30000);
-		Map<String, ProfilingData> profilingMap = profilingService.stopProfiling();
+		Map<String, ProfilingData> profilingMap = profilingService.stopProfiling().getProfilingMap();
 		Set<Entry<String, ProfilingData>> profilingEntrySet = profilingMap.entrySet();
 		final String leftAlignFormat = "| %-35s | %-28d | %-22d | %-20s | %-20s | %-10s  %n";
 		for(Entry<String, ProfilingData> profilingItem : profilingEntrySet) {
