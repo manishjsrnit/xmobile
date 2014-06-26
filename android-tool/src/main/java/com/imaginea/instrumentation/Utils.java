@@ -292,7 +292,7 @@ public class Utils {
         final String fullADBPath;
         switch (Utils.getOperatingSystemType()) {
             case Windows:
-            	fullADBPath = sdkPath+"/platform-tools/adb.exe";
+            	fullADBPath = sdkPath+"\\platform-tools\\adb.exe";
                 return fullADBPath;
             case Linux:
             case MacOS:
